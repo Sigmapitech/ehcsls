@@ -63,12 +63,7 @@ class Report:
 
     @property
     def message(self) -> str:
-        msg = populate_descriptions()
-        return f"{self.rule}{msg.get(self.rule)}: {self.desc}"
-
-def populate_descriptions():
-    return {}
-
+        return f"{self.rule}: {self.desc}"
 
 def parse_lambdananas_output(raw_report: str) -> List[Report]:
     reports = raw_report.split("\n")
