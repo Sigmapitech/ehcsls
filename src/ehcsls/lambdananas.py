@@ -24,9 +24,8 @@ _levels = '|'.join(m for m in ReportType.__members__)
 
 REPORT_FORMAT: Final[re.Pattern] = re.compile(
     rf"^[^:]+:(?P<line>\d+):\s?(?P<type>{_levels})"
-    rf":(?P<rule>H-\w\d+)\s[#]\s.*hs\s(?P<desc>.*)$"
+    rf":(?P<rule>H-\w\d+)\s[#](?P<file>.*hs\s)?\s(?P<desc>.*)$"
 )
-
 
 @dataclass
 class Report:
@@ -56,10 +55,10 @@ class Report:
         if match is None:
             return None
 
-        line, typ, rule, desc = match.groups()
+        line, typ, rule, file, desc = match.groups()
         return cls(
             line=int(line), type=ReportType(typ),
-            rule=rule, desc=desc
+            rule=rule, desc=desc if file is None else f"(file) {desc}"
         )
 
     @property
