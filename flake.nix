@@ -11,7 +11,8 @@
     utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        lambdanas = hcs.outputs.packages.lambdanas;
+
+        lambdananas = hcs.outputs.packages.${system}.lambdananas;
       in
       {
         formatter = pkgs.nixpkgs-fmt;
@@ -19,8 +20,30 @@
           packages = with pkgs; [
             python310
             black
-            lambdanas
+            lambdananas
           ];
+        };
+
+        packages = rec {
+          default = echsls;
+          echsls =
+            let
+              pypkgs = pkgs.python311Packages;
+            in
+            pypkgs.buildPythonPackage {
+              pname = "ehcsls";
+              version = "0.0.1";
+              src = ./.;
+
+              propagatedBuildInputs = [ pypkgs.pygls ];
+              nativeBuildInputs = [ pkgs.makeWrapper ];
+              doCheck = false;
+
+              postFixup = ''
+                wrapProgram $out/bin/ehcsls_run \
+                --set PATH ${pkgs.lib.makeBinPath ([ lambdananas ])}
+              '';
+            };
         };
       });
 }
