@@ -23,7 +23,8 @@ class ReportType(str, Enum):
 _levels = '|'.join(m for m in ReportType.__members__)
 
 REPORT_FORMAT: Final[re.Pattern] = re.compile(
-    rf"^[^:]+:(?P<line>\d+):\s?(?P<type>{_levels}):(?P<rule>C-\w\d+)$"
+    rf"^[^:]+:(?P<line>\d+):\s?(?P<type>{_levels})"
+    rf":(?P<rule>H-\w\d+)\s[#]\s.*hs\s(?P<desc>.*)$"
 )
 
 
@@ -32,6 +33,7 @@ class Report:
     line: int
     type: ReportType
     rule: str
+    desc: str
 
     last_line: int = 0
     count: int = 1
@@ -54,13 +56,16 @@ class Report:
         if match is None:
             return None
 
-        line, typ, rule = match.groups()
-        return cls(line=int(line), type=ReportType(typ), rule=rule)
+        line, typ, rule, desc = match.groups()
+        return cls(
+            line=int(line), type=ReportType(typ),
+            rule=rule, desc=desc
+        )
 
     @property
     def message(self) -> str:
         msg = populate_descriptions()
-        return f"{self.rule}{msg.get(self.rule)}"
+        return f"{self.rule}{msg.get(self.rule)}: {self.desc}"
 
 def populate_descriptions():
     return {}

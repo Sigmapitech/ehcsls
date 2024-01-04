@@ -18,7 +18,7 @@
         formatter = pkgs.nixpkgs-fmt;
         devShells.default = pkgs.mkShell {
           inputsFrom = [ packages.echsls ];
-          packages = [ pkgs.black ];
+          packages = [ pkgs.black lambdananas ];
         };
 
         packages = rec {
