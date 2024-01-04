@@ -13,15 +13,12 @@
         pkgs = nixpkgs.legacyPackages.${system};
 
         lambdananas = hcs.outputs.packages.${system}.lambdananas;
-      in
+      in rec
       {
         formatter = pkgs.nixpkgs-fmt;
         devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            python310
-            black
-            lambdananas
-          ];
+          inputsFrom = [ packages.echsls ];
+          packages = [ pkgs.black ];
         };
 
         packages = rec {
