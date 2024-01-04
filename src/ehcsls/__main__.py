@@ -6,7 +6,7 @@ from . import __version__, server
 logger = logging.getLogger(__package__)
 
 def main():
-    logger.info("hello from ECSLS", __version__)
+    logger.info("hello from EHCSLS", __version__)
     server.start_io()
 
 

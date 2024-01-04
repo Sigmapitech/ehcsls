@@ -56,9 +56,8 @@ def merge_reports(reports: List[Report]) -> List[Report]:
 
 def get_diagnostics(ls: LanguageServer, text_doc: Document):
     content = text_doc.source
-    filename = ".mk" if text_doc.filename == "Makefile" else text_doc.filename
 
-    with tempfile.NamedTemporaryFile(suffix=filename) as tf:
+    with tempfile.NamedTemporaryFile(suffix=".hs") as tf:
         tf.write(content.encode())
         tf.flush()
 
