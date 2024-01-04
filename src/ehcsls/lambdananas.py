@@ -85,7 +85,7 @@ def get_lambdananas_output(ls: LanguageServer, filename: str) -> List[Report]:
     if not filename:
         return []
     out = subprocess.run(
-        ("lambdananas", filename),
+        ("lambdananas-exe", filename),
         capture_output=True,
         timeout=5
     )
