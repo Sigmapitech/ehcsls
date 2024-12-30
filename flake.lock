@@ -5,11 +5,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1701680307,
-        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -21,46 +21,29 @@
     "hcs": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "lambdananas-src": "lambdananas-src",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1704359085,
-        "narHash": "sha256-eIiXVI5O82IhUhQ0JslMj3gwXdSrqi0dR+3UgaPwAPw=",
+        "lastModified": 1735557405,
+        "narHash": "sha256-lp1ORvFNWsX4GEkxJzjqTd2dTGiVs315SZOy0/0ddYk=",
         "owner": "Sigmapitech",
         "repo": "hcs",
-        "rev": "2347265fb152b16f9404819bece676337f4203dd",
+        "rev": "ccef6572aa2909498871ed6204a867868517da16",
         "type": "github"
       },
       "original": {
         "owner": "Sigmapitech",
         "repo": "hcs",
         "type": "github"
-      }
-    },
-    "lambdananas-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1704287368,
-        "narHash": "sha256-QeOLhDAC0MTCQI1zFFGzJVdRUyRiLRb3XYlGJv0Zu5I=",
-        "ref": "refs/heads/main",
-        "rev": "8bfa58513b210785a8e1349037067cefb1bb827a",
-        "revCount": 217,
-        "type": "git",
-        "url": "ssh://git@github.com/Epitech/lambdananas"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/Epitech/lambdananas"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1704145853,
-        "narHash": "sha256-G/1AMt9ibpeMlcxvD1vNaC8imGaK+g7zZ99e29BLgWw=",
+        "lastModified": 1720535198,
+        "narHash": "sha256-zwVvxrdIzralnSbcpghA92tWu2DV2lwv89xZc8MTrbg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2d2ea8eab9e400618748ab1a6a108255233b602c",
+        "rev": "205fd4226592cc83fd4c0885a3e4c9c400efabb5",
         "type": "github"
       },
       "original": {
@@ -72,11 +55,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1704194953,
-        "narHash": "sha256-RtDKd8Mynhe5CFnVT8s0/0yqtWFMM9LmCzXv/YKxnq4=",
+        "lastModified": 1735471104,
+        "narHash": "sha256-0q9NGQySwDQc7RhAV2ukfnu7Gxa5/ybJ2ANT8DQrQrs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bd645e8668ec6612439a9ee7e71f7eac4099d4f6",
+        "rev": "88195a94f390381c6afcdaa933c2f6ff93959cb4",
         "type": "github"
       },
       "original": {
@@ -127,11 +110,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1701680307,
-        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
