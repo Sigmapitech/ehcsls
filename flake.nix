@@ -22,8 +22,9 @@
         };
 
         packages = rec {
-          default = echsls;
-          echsls =
+          default = ehcsls;
+          echsls = ehcsls; # legacy exposed package typo :<
+          ehcsls =
             let
               pypkgs = pkgs.python311Packages;
             in
